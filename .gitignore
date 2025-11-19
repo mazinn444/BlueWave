@@ -1,0 +1,56 @@
+target/
+*.jar
+*.war
+*.ear
+
+dist/
+*.exe
+*.msi
+*.app
+*.dmg
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+
+bluewave_data.json
+
+*.log
+hs_err_pid*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.metadata
+.classpath
+.project
+.settings/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
