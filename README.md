@@ -1,105 +1,84 @@
-# 🌊 BlueWave Pro
+# 🌊 BlueWave
 
-> **O Player de Música Moderno, Leve e Estiloso feito em JavaFX.**
+**A modern, lightweight and stylish music player for your desktop.**
 
-O **BlueWave Pro** é um reprodutor de música desktop, focado em performance e funcionalidades essenciais para quem ama música. Ele suporta arquivos locais, playlists, equalização visual e até um modo "Slowed" nativo.
+BlueWave plays your local music with a clean design, smooth performance and useful features like playlists, visual effects and a built-in “Slowed” mode.
 
 ![Java](https://img.shields.io/badge/Java-21%2B-orange) ![Status](https://img.shields.io/badge/Status-Stable-green) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
 
-## ✨ Funcionalidades Principais
+## ✨ Main Features
 
-### 🎧 Reprodução & Áudio
-*   **Efeito Slowed + Reverb:** Controle de velocidade (Pitch/Speed) em tempo real.
-*   **Visualizer:** Barras de espectro de áudio sincronizadas com a música.
-*   **Shuffle Inteligente:** Algoritmo que não repete músicas até que todas da lista tenham tocado.
-*   **Loop de 3 Estados:** Sem repetição, Repetir Playlist, Repetir Uma Música (🔂).
+### 🎧 Audio & Playback
 
-### 📂 Gerenciamento de Biblioteca
-*   **Playlists Ilimitadas:** Crie, renomeie e exclua suas playlists.
-*   **Drag & Drop:** Arraste músicas para reordenar sua fila de reprodução facilmente.
-*   **Pesquisa Avançada:** Filtre por Título, Artista ou Duração.
-*   **Metadados:** Leitura automática de Capa do Álbum, Artista e Título (ID3 Tags).
+* **Slowed + Reverb Effect:** Adjust speed and pitch in real time.
+* **Audio Visualizer:** Live spectrum bars that move with the music.
+* **Smart Shuffle:** Songs don’t repeat until the whole playlist has played.
+* **3-Mode Loop:** Off, Loop Playlist or Loop One Song.
+
+### 📂 Library Management
+
+* **Unlimited Playlists:** Create, rename and delete playlists easily.
+* **Drag & Drop:** Move songs freely to reorder your queue.
+* **Search:** Find tracks by title, artist or duration.
+* **Metadata Support:** Auto-reads album cover, artist and title.
 
 ### 🎨 Interface & Performance
-*   **Temas:** Alterne entre **Modo Escuro** (Dark) e **Modo Claro** (Light).
-*   **Modo Batata 🥔:** Tem um PC mais modesto? Ative este modo para desligar animações e visualizadores, economizando RAM e CPU.
-*   **Drawer Lateral:** Visualize e edite a fila de reprodução sem sair da tela principal.
-*   **Design Responsivo:** Interface fluida baseada no tema *Primer* (GitHub/Win11 style).
+
+* **Themes:** Switch between Dark and Light mode.
+* **“Potato Mode”:** For older PCs — turns off animations and visualizers to save CPU and RAM.
+* **Side Drawer:** See and edit your queue without leaving the main screen.
+* **Smooth Design:** Clean layout inspired by modern Windows/GitHub style.
 
 ---
 
-## ⌨️ Teclas de Atalho
+## ⌨️ Shortcuts
 
-| Tecla | Ação |
-| :--- | :--- |
-| **Espaço** | Tocar / Pausar |
-| **Seta Direita** | Avançar 10 segundos |
-| **Seta Esquerda** | Voltar 10 segundos |
-| **Seta Cima** | Aumentar Volume |
-| **Seta Baixo** | Diminuir Volume |
-| **M** | Mutar / Desmutar |
-
----
-
-## 🛠️ Como Rodar e Compilar
-
-### Pré-requisitos
-*   **Java JDK 21** ou superior.
-*   **Maven** instalado e configurado no PATH.
-
-### 1. Rodando em modo de Desenvolvimento
-Clone o repositório e execute o comando na raiz do projeto:
-
-```bash
-mvn clean javafx:run
-```
-
-### 2. Criando um Executável (.exe / Instalação)
-Para distribuir o aplicativo sem exigir que o usuário tenha Java instalado:
-
-1.  Gere o arquivo JAR único ("Fat Jar"):
-    ```bash
-    mvn clean package
-    ```
-2.  Gere o executável (necessário ter JDK 14+ instalado):
-    ```bash
-    jpackage --type app-image --input target --name "BlueWave" --main-jar BlueWave-1.0.0.jar --main-class com.music.Launcher --icon icon.ico --dest dist --win-dir-chooser --win-menu --win-shortcut
-    ```
-    *O executável estará na pasta `dist/BlueWave`.*
+| Key             | Action            |
+| --------------- | ----------------- |
+| **Space**       | Play / Pause      |
+| **Right Arrow** | Skip 10 seconds   |
+| **Left Arrow**  | Rewind 10 seconds |
+| **Up Arrow**    | Volume Up         |
+| **Down Arrow**  | Volume Down       |
+| **M**           | Mute / Unmute     |
 
 ---
 
-## ⚙️ Configurações Avançadas
+## ⚙️ Setup
 
-O aplicativo cria dois arquivos na pasta de execução:
-1.  `bluewave_data.json`: Salva suas playlists, volume e última música tocada.
-2.  `config.json` (Interno): Define nome do app, versão e modo debug.
+### Requirements
 
-Se precisar resetar o app, basta deletar o arquivo `bluewave_data.json`.
+* Java 21 or newer.
 
----
+### Running BlueWave
 
-## 🥔 O que é o "Modo Batata"?
-
-O **Modo Batata** é uma funcionalidade de otimização. O JavaFX processa o espectro de áudio (as barrinhas dançantes) 60 vezes por segundo. Em computadores mais antigos, isso pode consumir CPU.
-
-Ao ativar o Modo Batata nas configurações:
-*   O Visualizer é desligado.
-*   Listeners de animação são removidos.
-*   O consumo de recursos cai drasticamente.
+Just download and run the installer or executable from the Releases page.
+No extra setup needed.
 
 ---
 
-## 🤝 Contribuição
+## 🔧 App Data
 
-Sinta-se à vontade para fazer um **Fork** e enviar **Pull Requests**. Sugestões de melhorias no CSS ou novos algoritmos de DSP são bem-vindas!
+BlueWave saves your playlists, volume and last played song in a small data file so everything loads fast when you return.
 
-## OBS
-
-> Algumas funções podem não funcionar, pois estamos na versão beta. Trabalhando nisso para entregar o melhor pra você!
+If you want a full reset, just delete the app’s data folder and it will recreate everything automatically.
 
 ---
 
-**Desenvolvido com ☕ e JavaFX.**
+## 🥔 What is “Potato Mode”?
+
+Some PCs struggle with real-time audio visualizers.
+Potato Mode turns them off and removes heavy animations, making BlueWave run much faster on low-end hardware.
+
+---
+
+## 📌 Note
+
+Some features may still be in development as the app is in beta.
+We’re working to polish everything and bring you the best experience.
+
+---
+
+**Made with ☕ and JavaFX.**
